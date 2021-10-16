@@ -1,2 +1,4 @@
-# ✋ Raise My Hand Plus
-Raise My Hand modified.
+# ✋ Raise My Hand Plus Plus
+[Raise My Hand](https://github.com/cswendrowski/FoundryVTT-Raise-My-Hand) modified:
+- plays sound effect ("chime2")
+- doesn't add chat commands
