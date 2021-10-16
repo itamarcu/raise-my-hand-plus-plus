@@ -1,16 +1,16 @@
 export default class HandRaiser {
-      
+
     constructor() {
         this.isRaised = false;
         this.userId = game.userId;
-        this.moduleName = "raise-my-hand-plus";
+        this.moduleName = "raise-my-hand-plus-plus";
     }
 
     handleSocket(recieveMsg) {
-        if (recieveMsg.type == "RAISE") {
+        if (recieveMsg.type === "RAISE") {
             this.raiseById(recieveMsg.playerID);
         }
-        else if (recieveMsg.type == "LOWER") {
+        else if (recieveMsg.type === "LOWER") {
             this.lowerById(recieveMsg.playerID);
         }
         else {
@@ -32,23 +32,23 @@ export default class HandRaiser {
             type: "RAISE",
             playerID: this.userId
         };
-        game.socket.emit("module.raise-my-hand-plus", msg);
+        game.socket.emit("module.raise-my-hand-plus-plus", msg);
 
         if (game.settings.get(this.moduleName, "showUiChatMessage")) {
-            let player = game.users.get(this.userId);           
+            let player = game.users.get(this.userId);
             let message=`<h2>${player.name}</h2>`;
-            message+=`<p>${player.name}  has their hand raised</p>`;  
-            message+= `<p><img style="vertical-align:middle" src="modules/raise-my-hand-plus/assets/hand.svg" width="100%"></p>`;
+            message+=`<p>${player.name}  has their hand raised</p>`;
+            message+= `<p><img style="vertical-align:middle" src="modules/raise-my-hand-plus-plus/assets/hand.svg" width="100%"></p>`;
             let chatData = {
               content: message
-            };  
-            ChatMessage.create(chatData, {});  
-        }   
-        
+            };
+            ChatMessage.create(chatData, {});
+        }
+
         if (game.settings.get(this.moduleName, "playSound")) {
-          const mySound = 'modules/raise-my-hand-plus/assets/bell01.ogg';
+          const mySound = 'modules/raise-my-hand-plus-plus/assets/chime2.ogg';
           AudioHelper.play({src: mySound, volume: 1.0, autoplay: true, loop: false}, true);
-        }         
+        }
     }
 
     raiseById(id) {
@@ -60,8 +60,8 @@ export default class HandRaiser {
             let player = game.users.get(id);
             ui.notifications.notify(player.name + " has their hand raised");
         }
-        
-  
+
+
 
     }
 
@@ -74,7 +74,7 @@ export default class HandRaiser {
             type: "LOWER",
             playerID: this.userId
         };
-        game.socket.emit("module.raise-my-hand-plus", msg);
+        game.socket.emit("module.raise-my-hand-plus-plus", msg);
     }
 
     lowerById(id) {

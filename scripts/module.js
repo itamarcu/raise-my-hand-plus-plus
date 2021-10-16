@@ -1,56 +1,14 @@
 import HandRaiser from "./HandRaiser.mjs";
 
 Hooks.on("chatCommandsReady", function(chatCommands) {
-  game.socket.on("module.raise-my-hand-plus", function(recieveMsg) {
+  game.socket.on("module.raise-my-hand-plus-plus", function(recieveMsg) {
     window.game.handRaiser.handleSocket(recieveMsg);
   });
-
-  chatCommands.registerCommand(chatCommands.createCommandFromData({
-    commandKey: "/raisemyhand",
-    invokeOnCommand: (chatlog, messageText, chatdata) => {
-      window.game.handRaiser.raise();
-    },
-    shouldDisplayToChat: false,
-    iconClass: "fa-hand-paper",
-    description: "Show raised hand indicator"
-  }));
-
-  chatCommands.registerCommand(chatCommands.createCommandFromData({
-    commandKey: "/lowermyhand",
-    invokeOnCommand: (chatlog, messageText, chatdata) => {
-      window.game.handRaiser.lower();
-    },
-    shouldDisplayToChat: false,
-    iconClass: "fa-hand-paper",
-    description: "Lower raised hand indicator"
-  }));
-
-  chatCommands.registerCommand(chatCommands.createCommandFromData({
-    commandKey: "/rmh",
-    invokeOnCommand: (chatlog, messageText, chatdata) => {
-      window.game.handRaiser.raise();
-    },
-    shouldDisplayToChat: false,
-    iconClass: "fa-hand-paper",
-    description: "Show raised hand indicator"
-  }));
-
-  chatCommands.registerCommand(chatCommands.createCommandFromData({
-    commandKey: "/lmh",
-    invokeOnCommand: (chatlog, messageText, chatdata) => {
-      window.game.handRaiser.lower();
-    },
-    shouldDisplayToChat: false,
-    iconClass: "fa-hand-paper",
-    description: "Lower raised hand indicator"
-  }));
-
-  
 });
 
 
 Hooks.once('ready', function() {
-  let moduleName = 'raise-my-hand-plus';
+  let moduleName = 'raise-my-hand-plus-plus';
 
   let handRaiser = new HandRaiser();
   window.game.handRaiser = handRaiser;
@@ -107,7 +65,7 @@ Hooks.on("getSceneControlButtons", function(controls) {
   let tileControls = controls.find(x => x.name === "token");
   tileControls.tools.push({
     icon: "fas fa-hand-paper",
-    name: "raise-my-hand-plus",
+    name: "raise-my-hand-plus-plus",
     title: "✋Raise My Hand",
     button: true,
     onClick: () => window.game.handRaiser.toggle()
