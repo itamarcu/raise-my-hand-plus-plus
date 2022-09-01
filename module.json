@@ -3,7 +3,12 @@
   "id": "raise-my-hand-plus-plus",
   "title": "Raise My Hand Plus Plus",
   "description": "Adds a 'Raise my hand' button that displays a small alert on GM screens that the player would like attention",
-  "authors": [],
+  "authors": [{
+    "name": "shem",
+    "discord": "shemetz#0226",
+    "email": "itamarcu+foundry@gmail.com",
+    "reddit": "u/Shemetz"
+  }],
   "url": "https://github.com/shemetz/raise-my-hand-plus-plus",
   "flags": {},
   "version": "1.1.3",
