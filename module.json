@@ -35,9 +35,6 @@
   "packs": [],
   "socket": true,
   "manifest": "https://raw.githubusercontent.com/shemetz/raise-my-hand-plus-plus/main/module.json",
-  "download": "https://codeload.github.com/shemetz/raise-my-hand-plus-plus/zip/main",
-  "protected": false,
-  "coreTranslation": false,
-  "library": true
+  "download": "https://codeload.github.com/shemetz/raise-my-hand-plus-plus/zip/main"
 }
 
